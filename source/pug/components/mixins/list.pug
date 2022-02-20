@@ -1,0 +1,26 @@
+-
+  const listDefaultProp = {
+    classes: "list--rocket",
+    items:
+      [
+        {
+          text: "Best odds",
+        },
+        {
+          text: "Casino",
+        },
+        {
+          text: "200+ Paymenth Method",
+        },
+        {
+          text: "Fast Payouts",
+        },
+      ],
+  };
+
+mixin list(listProp= listDefaultProp)
+  ul.list.list-reset(class= listProp.classes)
+
+    each item in listProp.items
+      li.list__item
+        p!= item.text

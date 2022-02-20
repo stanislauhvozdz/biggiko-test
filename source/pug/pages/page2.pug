@@ -1,0 +1,42 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Тестовое задание" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = false
+  - const headerMods = ""
+  - const hasFooter = false
+  - const footerMods = ""
+  - const currentUrl = "page2.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  -
+    const commentaryBlockData = {
+      boxImage: {
+        path: "content",
+        image: "commentary-logo",
+        format: "png",
+        width: "31",
+        height: "31",
+        alt: "Иван Иванов",
+        classes: "commentary-block__box-image",
+      },
+      cartsListProp: {
+        classes: "dadad",
+      },
+    }
+
+
+block main
+  main
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+    .container.grid
+
+      +parimatch()
+
+      +list-parameters()
+      +commentary-block(commentaryBlockData)
+
+
+
+
+block modals

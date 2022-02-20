@@ -1,0 +1,17 @@
+-
+  const defaultInfo = {
+    subtitle: "Welcome bonus",
+    title: "100% Up&nbsp;to&nbsp;500&nbsp;$",
+    descr: "Lorem ipsum dolor sit amet consectetur adipiscing elit lacus tempor, vulputate id fames pulvinar curabitur faucibus.",
+  };
+
+mixin info-block(info= defaultInfo)
+  .info-block(class= info.classes)
+    .info-block__subtitle
+      +icon("present", "17px", "17px")
+      p!= info.subtitle
+
+    h2.info-block__title!= info.title
+
+    p.info-block__descr!= info.descr
+

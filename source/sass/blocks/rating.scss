@@ -1,0 +1,43 @@
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating__counter {
+  color: $color-lucky-point;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 20px;
+  margin-right: 10px;
+
+  @include vp-767 {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.rating__list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: center;
+
+    svg {
+      @include vp-767 {
+        width: 17px;
+        height: 17px;
+      }
+    }
+
+    @include vp-767 {
+      &:not(:last-child) {
+        display: none;
+      }
+    }
+  }
+}

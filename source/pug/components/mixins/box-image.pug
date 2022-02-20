@@ -1,0 +1,14 @@
+-
+  const imageDefaultParameters = {
+    path: "content",
+    image: "logo",
+    format: "png",
+    width: "112",
+    height: "37",
+    alt: "Логотип компании BWin",
+    classes: ""
+  }
+
+mixin box-image(imageProps= imageDefaultParameters)
+  .box-image(class!= imageProps.classes)
+    +picture(imageProps.path, imageProps.image, imageProps.format, imageProps.width, imageProps.height, imageProps.alt)

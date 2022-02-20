@@ -1,0 +1,8 @@
+-
+  const buttonDefaultProp = {
+    classes: "",
+    text: "Text",
+  };
+
+mixin button(cartsListProp= buttonDefaultProp)
+  button.button(class= cartsListProp.classes type="button")!= cartsListProp.text

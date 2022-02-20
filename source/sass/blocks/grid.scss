@@ -1,0 +1,21 @@
+.grid {
+  display: grid;
+  grid-template-columns: 75.1% 1fr;
+  grid-template-rows: min-content;
+  gap: 15px;
+
+  padding-top: 16px;
+
+  @include vp-1239 {
+    grid-template-columns: 1fr;
+  }
+
+  @include vp-767 {
+    padding-top: 15px;
+  }
+
+  @include vp-374 {
+    padding-top: 10px;
+    gap: 10px;
+  }
+}

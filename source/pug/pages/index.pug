@@ -1,0 +1,25 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Тестовое задание" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = false
+  - const headerMods = ""
+  - const hasFooter = false
+  - const footerMods = ""
+  - const currentUrl = "index.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+
+block main
+  main(style={'display': 'flex', 'align-items': 'center', 'justify-content': 'center', 'font-size': '30px'})
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+    ol
+      li(style={'margin-bottom': '40px'})
+        a(href="page1.html") Страница №1
+      li
+        a(href="page2.html") Страница №2
+
+
+
+block modals

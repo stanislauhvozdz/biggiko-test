@@ -1,0 +1,398 @@
+.card {
+  position: relative;
+  background-color: $color-ghost-white;
+  border-radius: 15px;
+
+  @include vp-767 {
+    border-radius: 10px;
+  }
+}
+
+// Header ================
+
+.card__label {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  right: 0;
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  background-image: url("../img/content/purple-label.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  p {
+    font-weight: 500;
+    margin: 0;
+    padding: 12px 25px;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: $color-default-white;
+    text-align: center;
+
+    @include vp-767 {
+      padding: 8px 15px;
+    }
+
+    @include vp-374 {
+      padding: 8px 15px;
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
+
+  &--orange {
+    background-image: url("../img/content/orange-label.png");
+
+    @include vp-374 {
+      background-image: url("../img/content/purple-label-320.png");
+    }
+  }
+
+  @include vp-767 {
+    min-height: 34px;
+    top: -5px;
+    margin: 0;
+    margin-left: auto;
+  }
+
+  @include vp-374 {
+    min-height: 32px;
+    max-width: 141px;
+    right: 21%;
+    top: -4px;
+    background-image: url("../img/content/purple-label-320.png");
+  }
+}
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 25px 15px 21px;
+  border-bottom: 2px solid rgba($color-lavender, 0.6);
+
+  @include vp-767 {
+    padding: 15px 10px;
+  }
+}
+
+.card__header-left {
+  display: flex;
+  align-items: center;
+}
+
+.card__header-right {
+  padding-bottom: 3px;
+
+  @include vp-1023 {
+    padding-bottom: 0;
+  }
+
+  @include vp-374 {
+    margin-right: 5px;
+  }
+}
+
+.card__number {
+  display: inline-block;
+  margin-right: 14px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  background: $gradient-orange;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @include vp-767 {
+    line-height: 17px;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  @include vp-374 {
+    margin-right: 5px;
+  }
+}
+
+.card__header-icon {
+  margin-right: 10px;
+
+  @include vp-767 {
+    width: 17px;
+    height: 17px;
+  }
+
+  @include vp-374 {
+    margin-right: 5px;
+  }
+}
+
+.card__title {
+  display: inline-block;
+  margin: 0;
+  color: $color-lucky-point;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+
+  @include vp-767 {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+// Body =======================
+
+.card__body {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 34.5% 1fr 1.9fr 14%;
+  grid-template-rows: min-content;
+  column-gap: 20px;
+
+  @media (max-width: 1380px) {
+    grid-template-columns: minmax(300px, 445px) minmax(min-content, 1fr) 272px minmax(120px, 180px);
+  }
+
+  @media (max-width: 1240px) {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+}
+
+.card__body-wrapper {
+  display: flex;
+
+  @media (max-width: 1240px) {
+    border-bottom: 2px solid $color-lavender;
+    padding: 14px 10px 10px;
+  }
+
+  @include vp-374 {
+    padding: 12px 10px 9px;
+  }
+}
+
+.card__box-image {
+  width: 78%;
+  max-height: 125px;
+  margin-right: 18px;
+
+  @media (max-width: 1240px) {
+    margin-right: 15px;
+    flex-basis: 25%;
+    max-width: 100%;
+    min-width: 72px;
+  }
+
+  @include vp-767 {
+    max-height: 85%;
+  }
+
+  @include vp-374 {
+    margin-right: 10px;
+    max-height: 100%;
+  }
+}
+
+.card__body-info-block {
+  .info-block__subtitle {
+    @include vp-767 {
+      display: none;
+    }
+  }
+}
+
+.card__body-carts {
+  justify-self: center;
+  padding-left: 10px;
+
+  @media (max-width: 1380px) {
+    padding-left: 0;
+  }
+
+  @media (max-width: 1240px) {
+    grid-row: 4 / 5;
+    width: 100%;
+    padding: 10px;
+  }
+
+  @include vp-374 {
+    padding-bottom: 4px;
+  }
+}
+
+.card__carts-block {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 272px;
+  flex-wrap: wrap;
+  gap: 15px 20px;
+  max-width: 272px;
+
+  &.carts-block {
+    margin-bottom: 17px;
+
+    @include vp-767 {
+      margin-bottom: 0;
+    }
+
+    @include vp-374 {
+      margin-bottom: 3px;
+    }
+  }
+
+  @include vp-1239 {
+    flex-basis: 100%;
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  @include vp-767 {
+    justify-content: space-between;
+    gap: 5px;
+
+    .carts-block__item:nth-last-child(1),
+    .carts-block__item:nth-last-child(2) {
+      display: none;
+    }
+  }
+
+  @include vp-374 {
+    .carts-block__item {
+      width: 38.5px;
+      height: 24px;
+    }
+  }
+}
+
+.card__body-buttons {
+  width: 100%;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @include vp-1239 {
+    flex-direction: row-reverse;
+    padding: 0 10px;
+    gap: 10px;
+  }
+
+  @include vp-374 {
+    flex-direction: column-reverse;
+  }
+}
+
+.card__body-list {
+  align-self: center;
+  padding-left: 18px;
+  flex-direction: column;
+
+  @include vp-1379 {
+    padding-left: 0;
+  }
+
+  @include vp-1239 {
+    padding: 20px 10px;
+    flex-direction: row;
+    margin: 0 auto;
+  }
+
+  @include vp-374 {
+    padding: 15px 10px;
+    row-gap: 10px;
+  }
+}
+
+// Footer =======================
+
+.card__footer {
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  max-height: 0;
+  opacity: 0;
+  transition: all $trans-default;
+  background-color: $color-panache;
+  border-top: 1px solid solid $color-lavender;
+
+  &.show {
+    max-height: fit-content;
+    opacity: 1;
+    padding: 14px 15px 15px;
+    border-radius: 15px;
+
+    @include vp-767 {
+      padding: 9px;
+      border-radius: 15px;
+    }
+
+    @include vp-374 {
+      border-radius: 10px;
+    }
+  }
+
+  @include vp-1239 {
+    flex-direction: column;
+  }
+
+  @include vp-374 {
+    gap: 10px;
+  }
+}
+
+.card__footer-list {
+  flex-basis: 404px;
+  flex-shrink: 0;
+  flex-direction: column;
+
+  @media (max-width: 1380px) {
+    margin: auto 0;
+  }
+
+  @include vp-1239 {
+    flex-basis: content;
+    margin: 0;
+  }
+
+  @include vp-767 {
+    gap: 10px;
+
+    &:not(:last-child) {
+      margin-bottom: -7px;
+    }
+  }
+
+  @include vp-374 {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.card__footer-text {
+  flex-shrink: 1;
+
+  p {
+    line-height: 25px;
+    color: $color-storm-gray;
+    margin: 0;
+
+    @include vp-767 {
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    @include vp-374 {
+      font-size: 10px;
+      line-height: 15px;
+    }
+  }
+}

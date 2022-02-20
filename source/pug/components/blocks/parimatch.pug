@@ -1,0 +1,90 @@
+-
+  const parimatchCartsList = {
+    classes: "parimatch__carts-block",
+  }
+
+  const parimatchList = {
+    classes: "list--rocket list-reset parimatch__list",
+    items:
+      [
+        {
+          text: "Lorem ipsum dolor sit consectetur",
+        },
+        {
+          text: "Lorem ipsum dolor sit consectetur",
+        },
+        {
+          text: "Lorem ipsum dolor sit consectetur",
+        },
+        {
+          text: "Lorem ipsum dolor sit consectetur",
+        },
+        {
+          text: "Lorem ipsum dolor sit consectetur",
+        },
+        {
+          text: "Lorem ipsum dolor sit consectetur",
+        },
+      ],
+  }
+
+  const parimatchBoxImage = {
+    path: "content",
+    image: "parimatch-logo",
+    format: "png",
+    width: "130",
+    height: "40",
+    alt: "Логотип компании parimatch",
+    classes: "parimatch__box-image"
+  }
+
+  const parimatchRating = {
+    counter: "5.0",
+    stars: 5,
+    classes: "parimatch__rating",
+  }
+
+  const parimatchInfoBlock = {
+    subtitle: "Welcome bonus",
+    title: "100% Up&nbsp;to&nbsp;500&nbsp;$",
+    descr: "Lorem ipsum dolor sit amet consectetur adipiscing elit lacus tempor quis volutpat integer lacinia montes nisl, class quisque leo consequat sed lobortis.",
+    classes: "parimatch__info-block",
+  }
+
+  const parimatchImg = {
+    path: "content",
+    image: "parimatch-logo-white",
+    format: "png",
+    width: 123,
+    height: 39,
+    altText: "Логотип компании Parimatch",
+  }
+
+  const parimatchCartsBlock = {
+    classes: "parimatch__carts-block",
+  }
+
+
+mixin parimatch(parimatchProps = parimatchDefault)
+  .parimatch
+    .parimatch__header
+      +box-image(parimatchBoxImage)
+
+      .parimatch__header-info
+        h2 PariMatch
+        +rating(parimatchRating)
+        p.parimatch__header-text Beting/Casino/Live Games/Fast Game
+        +list-system()
+
+
+    .parimatch__body
+      +list(parimatchList)
+      +carts-block(parimatchCartsBlock)
+
+    .parimatch__aside
+      .parimatch__aside-image-box
+        +img(parimatchImg.path, parimatchImg.image, parimatchImg.format, parimatchImg.width, parimatchImg.height, parimatchImg.altText)
+
+      +info-block(parimatchInfoBlock)
+      .parimatch__aside-button
+        +button(buttonGreen)

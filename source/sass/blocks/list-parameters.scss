@@ -1,0 +1,92 @@
+.list-parameters {
+  background-color: $color-ghost-white;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include vp-1239 {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @include vp-767 {
+    padding: 10px;
+    border-radius: 10px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  @include vp-374 {
+    gap: 15px;
+  }
+}
+
+.list-parameters__item {
+  display: flex;
+
+  svg {
+    margin-right: 10px;
+
+    @include vp-767 {
+      height: 31px;
+      width: 31px;
+    }
+
+    @include vp-374 {
+      height: 27px;
+      width: 27px;
+    }
+  }
+
+  @include vp-1239 {
+    flex-basis: 25%;
+  }
+}
+
+.list-parameters__text {
+  padding-top: 3px;
+
+  h3 {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 500;
+    color: $color-lucky-point;
+
+    @include vp-767 {
+      font-size: 12px;
+      line-height: 14px;
+      margin: 0;
+    }
+
+    @include vp-374 {
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
+
+  p {
+    margin: 0;
+    color: $color-storm-gray;
+    line-height: 17px;
+
+    @include vp-767 {
+      font-size: 14px;
+    }
+
+    @include vp-374 {
+      font-size: 13px;
+      line-height: 15px;
+    }
+  }
+
+  @include vp-767 {
+    padding-top: 0;
+  }
+}

@@ -1,0 +1,40 @@
+.button {
+  padding: 19px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: min-content;
+  border: none;
+  background-color: transparent;
+  color: $color-default-white;
+  border-radius: 10px;
+  transition: background $trans-default;
+  cursor: pointer;
+  font-weight: 500;
+
+
+  &--green {
+    color: $color-default-white;
+    background-color: $color-kelly-green;
+
+    &:hover {
+      background-color: rgba($color-kelly-green, 0.8);
+    }
+  }
+
+  &--grey {
+    color: $color-shark;
+    background-color: rgba($color-lavender, 0.5);
+
+    &:hover {
+      background-color: rgba($color-lavender, 0.8);
+    }
+  }
+
+  @media (max-width: 767px) {
+    font-size: 12px;
+    line-height: 14px;
+    padding: 15px 14px;
+  }
+}

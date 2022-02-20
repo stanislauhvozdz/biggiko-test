@@ -1,0 +1,11 @@
+-
+  const hadeInfoDefaultProp = {
+    classes: ""
+  }
+
+
+mixin hide-info(hadeInfo= hadeInfoDefaultProp)
+  .hide-info
+    button.more-info.hide-info__button(class!= hadeInfo.classes)
+      span More info
+      +icon("arrow", "15px", "15px")

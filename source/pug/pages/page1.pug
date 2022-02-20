@@ -1,0 +1,175 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Тестовое задание" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = false
+  - const headerMods = ""
+  - const hasFooter = false
+  - const footerMods = ""
+  - const currentUrl = "page1.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  -
+    const data1 = {
+        classes: "",
+        cardNumber: 1,
+        cardTitle: "BWIN",
+        labelShow: true,
+        labelMod: "",
+        labelText: "best bonus",
+        rating: {
+            counter: "5.0",
+            stars: 5,
+            classes: "card__header-right",
+          },
+        boxImage: {
+            classes: "card__box-image",
+            path: "content",
+            image: "logo",
+            format: "png",
+            width: "112",
+            height: "37",
+            alt: "Логотип компании BWin",
+          },
+        infoBlock: {
+            subtitle: "Welcome bonus",
+            title: "100% Up&nbsp;to&nbsp;500&nbsp;$",
+            descr: "Lorem ipsum dolor sit amet consectetur adipiscing elit lacus tempor, vulputate id fames pulvinar curabitur faucibus.",
+            classes: "card__body-info-block",
+          },
+        bodyList: {
+          classes: "list--card list--rocket card__body-list",
+          items:
+            [
+              {
+                text: "Best odds",
+              },
+              {
+                text: "Casino",
+              },
+              {
+                text: "200+ Paymenth Method",
+              },
+              {
+                text: "Fast Payouts",
+              },
+            ],
+          },
+        cartsListProp: {
+          classes:  "card__carts-block",
+        },
+      }
+  -
+    const data2 = {
+        classes: "",
+        cardNumber: 2,
+        cardTitle: "BWIN",
+        labelShow: true,
+        labelMod: "card__label--orange",
+        labelText: "best bonus",
+        rating: {
+            counter: "5.0",
+            stars: 5,
+            classes: "card__header-right",
+          },
+        boxImage: {
+            path: "content",
+            image: "logo",
+            format: "png",
+            width: "112",
+            height: "37",
+            alt: "Логотип компании BWin",
+            classes: "card__box-image",
+          },
+        infoBlock: {
+            subtitle: "Welcome bonus",
+            title: "100% Up&nbsp;to&nbsp;500&nbsp;$",
+            descr: "Lorem ipsum dolor sit amet consectetur adipiscing elit lacus tempor, vulputate id fames pulvinar curabitur faucibus.",
+            classes: "card__body-info-block",
+          },
+        bodyList: {
+          classes: "list--card list--rocket card__body-list",
+          items:
+            [
+              {
+                text: "Best odds",
+              },
+              {
+                text: "Casino",
+              },
+              {
+                text: "200+ Paymenth Method",
+              },
+              {
+                text: "Fast Payouts",
+              },
+            ],
+          },
+        cartsListProp: {
+          classes:  "card__carts-block",
+        },
+      }
+  -
+    const data3 = {
+        classes: "",
+        cardNumber: 3,
+        cardTitle: "BWIN",
+        labelShow: "",
+        labelMod: "",
+        labelText: "best bonus",
+        rating: {
+            counter: "5.0",
+            stars: 5,
+            classes: "card__header-right",
+          },
+        boxImage: {
+            path: "content",
+            image: "logo",
+            format: "png",
+            width: "112",
+            height: "37",
+            alt: "Логотип компании BWin",
+            classes: "card__box-image",
+          },
+        infoBlock: {
+            subtitle: "Welcome bonus",
+            title: "100% Up&nbsp;to&nbsp;500&nbsp;$",
+            descr: "Lorem ipsum dolor sit amet consectetur adipiscing elit lacus tempor, vulputate id fames pulvinar curabitur faucibus.",
+            classes: "card__body-info-block",
+          },
+        bodyList: {
+            classes: "list--card list--rocket card__body-list",
+            items:
+              [
+                {
+                  text: "Best odds",
+                },
+                {
+                  text: "Casino",
+                },
+                {
+                  text: "200+ Paymenth Method",
+                },
+                {
+                  text: "Fast Payouts",
+                },
+              ],
+          },
+        cartsListProp: {
+          classes:  "card__carts-block",
+        },
+      }
+
+
+
+block main
+  main
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+    .container.container__wrapper
+      +card(data1)
+      +card(data2)
+      +card(data3)
+
+
+
+block modals

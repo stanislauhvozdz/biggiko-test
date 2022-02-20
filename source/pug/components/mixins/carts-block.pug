@@ -1,0 +1,56 @@
+-
+  const cartsBlockDefaultProp = {
+    classes: "",
+  };
+
+  const cartsListItems = [
+      {
+        cart: "mastercard",
+        width: 26,
+        height: 20,
+      },
+      {
+        cart: "discover",
+        width: 33,
+        height: 6,
+      },
+      {
+        cart: "express",
+        width: 25,
+        height: 17,
+      },
+      {
+        cart: "maestro",
+        width: 26,
+        height: 20,
+      },
+      {
+        cart: "unionpay",
+        width: 23,
+        height: 15,
+      },
+      {
+        cart: "jcb",
+        width: 19,
+        height: 15,
+      },
+            {
+        cart: "express",
+        width: 25,
+        height: 17,
+      },
+      {
+        cart: "maestro",
+        width: 26,
+        height: 20,
+      },
+    ]
+
+
+
+mixin carts-block(cartsListProp= cartsBlockDefaultProp)
+  ul.carts-block(class!= cartsListProp.classes)
+
+    each item in cartsListItems
+      li.carts-block__item
+        +icon(item.cart, item.width, item.height)

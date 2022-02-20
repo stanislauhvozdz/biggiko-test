@@ -1,0 +1,44 @@
+-
+  const listParametersDefualt = {
+    classes: "list-parameters",
+    items:
+      [
+        {
+          text: "Foundation",
+          icon: "calendar",
+          descr: "1994",
+        },
+        {
+          text: "Licensed",
+          icon: "shield",
+          descr: "Curaso GLH-OCCHKTW0706292016",
+        },
+        {
+          text: "Apps",
+          icon: "mobile-phone",
+          descr: "IOS, Android, Windows",
+        },
+        {
+          text: "Country",
+          icon: "location",
+          descr: "Europe, Russia, North American",
+        },
+        {
+          text: "Apps",
+          icon: "server",
+          descr: "IOS, Android, Windows",
+        },
+      ],
+  };
+
+mixin list-parameters(listParam= listParametersDefualt)
+  ul.list-reset(class= listParam.classes)
+
+    each item in listParam.items
+      li.list-parameters__item
+          +icon(item.icon, "23px", "23px")
+          .list-parameters__text
+            h3!= item.text
+            p!= item.descr
+
+

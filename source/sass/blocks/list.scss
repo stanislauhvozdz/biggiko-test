@@ -1,0 +1,157 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  & li::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &--rocket {
+    & li::before {
+      content: "";
+      width: 17px;
+      height: 17px;
+      background-image: url("../img/svg/rocket.svg");
+      background-size: contain;
+
+      @include vp-374 {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+
+  &--dislike {
+    & li {
+      padding-left: 30px;
+
+      p {
+        line-height: 25px;
+
+        @include vp-767 {
+          line-height: 14px;
+        }
+      }
+
+      &::before {
+        content: "";
+        width: 25px;
+        height: 25px;
+        background-image: url("../img/svg/dislike.svg");
+        background-size: contain;
+
+        @include vp-767 {
+          width: 14px;
+          height: 14px;
+        }
+      }
+
+      @include vp-767 {
+        padding-left: 19px;
+      }
+    }
+  }
+
+  &--like {
+    & li {
+      padding-left: 30px;
+
+      p {
+        line-height: 25px;
+
+        @include vp-767 {
+          line-height: 14px;
+        }
+      }
+
+      &::before {
+        content: "";
+        width: 25px;
+        height: 25px;
+        background-image: url("../img/svg/like.svg");
+        background-size: contain;
+
+        @include vp-767 {
+          width: 14px;
+          height: 14px;
+        }
+      }
+
+      @include vp-767 {
+        padding-left: 19px;
+      }
+    }
+  }
+
+  &--border {
+    border-radius: 15px;
+    border: 2px solid $color-lavender;
+    padding: 13px;
+
+    @include vp-767 {
+      padding: 9px;
+    }
+  }
+
+  &--card {
+    @include vp-767 {
+      row-gap: 15px;
+      column-gap: 15px;
+      flex-flow: wrap-reverse;
+      font-size: 14px;
+      line-height: 17px;
+
+      & > .list__item {
+        flex-basis: 48%;
+
+        &:nth-child(1) {
+          order: 4;
+          transform: translateX(9px);
+
+          @media (max-width: 427px) {
+            transform: translate(0);
+          }
+        }
+
+        &:nth-child(4) {
+          order: -1;
+        }
+
+        &:nth-child(2) {
+          transform: translateX(9px);
+
+          @media (max-width: 427px) {
+            transform: translate(0);
+          }
+        }
+
+        @media (max-width: 427px) {
+          flex-basis: auto;
+        }
+      }
+    }
+  }
+}
+
+.list__item {
+  position: relative;
+  padding-left: 27px;
+
+  p {
+    margin: 0;
+    line-height: 17px;
+    color: $color-storm-gray;
+
+    @include vp-374 {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  @include vp-374 {
+    padding-left: 19px;
+  }
+}

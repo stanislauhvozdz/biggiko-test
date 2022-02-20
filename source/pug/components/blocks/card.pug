@@ -1,0 +1,104 @@
+-
+  const buttonGray = {
+    classes: "button--grey",
+    text: "Read Review",
+  };
+
+  const buttonGreen = {
+    classes: "button--green",
+    text: "Claim bonus",
+  };
+
+  const listProp = {
+    classes: "list--rocket card__body-list",
+    items:
+      [
+        {
+          text: "Best odds",
+        },
+        {
+          text: "Casino",
+        },
+        {
+          text: "200+ Paymenth Method",
+        },
+        {
+          text: "Fast Payouts",
+        },
+      ],
+  };
+
+  const listFooterLike = {
+    classes: "list--like list--border card__footer-list",
+    items:
+      [
+        {
+          text: "Lorem ipsum dolor sit amet consectetur adipiscing",
+        },
+        {
+          text: "Lorem ipsum adipiscing",
+        },
+        {
+          text: "Lorem ipsum dolor sit amet adipiscing.",
+        },
+        {
+          text: "Lorem ipsum dolor sit amet consectetur adipiscing",
+        },
+      ],
+  };
+
+  const listFooterDisike = {
+    classes: "list--dislike list--border card__footer-list",
+    items:
+      [
+        {
+          text: "Lorem ipsum dolor sit amet consectetur adipiscing",
+        },
+        {
+          text: "Lorem ipsum adipiscing",
+        },
+        {
+          text: "Lorem ipsum dolor sit amet adipiscing.",
+        },
+        {
+          text: "Lorem ipsum dolor sit amet consectetur adipiscing",
+        },
+      ],
+  };
+
+
+mixin card(cardData= defaultCardData)
+  .card(class= cardData.classes)
+
+    if (cardData.labelShow)
+      .card__label(class!= cardData.labelMod)
+        p!= cardData.labelText
+
+    .card__header
+      .card__header-left
+        span.card__number!= cardData.cardNumber
+        +icon("fire", "25px", "25px").card__header-icon
+        h1.card__title!=cardData.cardTitle
+
+      +rating(cardData.rating)
+
+    .card__body
+      .card__body-wrapper
+        +box-image(cardData.boxImage)
+        +info-block(cardData.infoBlock)
+      +list(cardData.bodyList)
+      .card__body-carts
+        +carts-block(cardData.cartsListProp)
+        +hide-info()
+
+      .card__body-buttons
+        +button(buttonGreen)
+        +button(buttonGray)
+
+
+    .card__footer
+      .card__footer-text
+        p Potenti placerat in tempor aliquet ut porta fringilla inceptos, massa senectus lacus volutpat morbi felis ultrices, cras nullam commodo nulla litora phasellus ornare. Lorem ipsum dolor proin id fames pulvinar curabitur faucibus. Potenti placerat in tempor aliquet ut porta fringilla inceptos, massa senectus lacus volutpat morbi felis ultrices, cras nullam commodo nulla litora phasellus ornare. Lorem ipsum dolor proin id fames pulvinar curabitur faucibus.
+
+      +list(listFooterLike)
+      +list(listFooterDisike)

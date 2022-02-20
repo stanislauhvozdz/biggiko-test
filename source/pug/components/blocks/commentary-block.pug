@@ -1,0 +1,19 @@
+-
+  const defaultProp = {
+    classes: "",
+    boxImage: "",
+  }
+
+mixin commentary-block(commentaryBlockData = defaultProp)
+  .commentary-block(class!= commentaryBlockData.classes)
+    .commentary-block__header
+      +box-image(commentaryBlockData.boxImage)
+
+      .commentary-block__header-wrapper
+        h3.commentary-block__author Parimatch
+        p.commentary-block__descr Commnet from Author
+
+
+    .commentary-block__body
+      blockquote
+        p Lorem ipsum dolor sit amet consectetur adipiscing elit lacus tempor quis volutpat integer lacinia montes nisl, class quisque leo consequat sed lobortis proin suscipit vulputate id fames pulvinar curabitur faucibus. Lorem ipsum dolor sit amet consectetur adipiscing elit lacus tempor quis volutpat integer lacinia montes nisl, class quisque leo consequat sed lobortis proin suscipit vulputate id fames pulvinar curabitur faucibus. Lorem ipsum dolor sit amet consectetur adipiscing elit lacus tempor quis volutpat integer lacinia montes nisl, class quisque leo consequat sed lobortis proin suscipit vulputate id fames pulvinar curabitur faucibus.

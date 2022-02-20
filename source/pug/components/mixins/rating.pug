@@ -1,0 +1,18 @@
+-
+  const defaultRating = {
+    counter: "5.0",
+    stars: 5,
+    classes: "card__header-right",
+  };
+
+mixin rating (ratingData= defaultRating)
+  .rating(class= ratingData.classes)
+    span.rating__counter!= ratingData.counter
+
+    - let count = 0;
+
+    ul.rating__list
+      while count < ratingData.stars
+        li
+          - count += 1;
+          +icon("star", "20px", "20px")
